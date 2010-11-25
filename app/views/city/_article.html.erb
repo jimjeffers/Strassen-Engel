@@ -6,7 +6,7 @@
     </hgroup>
   </header>
   <section class="story">
-    <p><a href="#">read more ></a></p>
+    <%= raw RedCloth.new(article.content).to_html %>
     <dl class="portrait">
       <dt><%= article.name %></dt>
       <dd><img src="<%= article.avatar.url(:small) %>" width="294" height="219" alt="Chris"></dd>
