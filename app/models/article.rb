@@ -4,6 +4,8 @@ class Article < ActiveRecord::Base
   belongs_to :district, :counter_cache => true
   belongs_to :user, :counter_cache => true
   
+  scope :recent, :order => "created_at DESC", :limit => 5
+  
   AVATAR_SW = 295
   AVATAR_SH = 220
   AVATAR_NW = 295*2

@@ -50,7 +50,7 @@
       top: 152px;
    }
    
-   .district_map .districts > li.neukoln {
+   .district_map .districts > li.neukolln {
       left: 150px;
       top: 151px;
    }
@@ -85,39 +85,43 @@
       top: 140px;
    }
    
-   .district_map .districts > li.zehelendorf {
+   .district_map .districts > li.zehlendorf {
       left: 0;
       top: 166px;
    }
    
-   .district_map .districts > li.prenzelauerberg {
+   .district_map .districts > li.prenzlauer_berg {
       left: 147px;
       top: 89px;
+      z-index: 3;
    }
    
    .district_map .districts > li.mitte {
       left: 104px;
       top: 88px;
+      z-index: 2;
    }
    
    .district_map .districts > li.lichtenberg {
       left: 182px;
       top: 117px;
+      z-index: 2;
    }
    
-   .district_map .districts > li.kopenik {
+   .district_map .districts > li.kopenick {
       left: 195px;
       top: 155px;
    }
    
-   .district_map .districts > li.hellersdorg {
+   .district_map .districts > li.hellersdorf {
       left: 210px;
       top: 87px;
    }
    
-   .district_map .districts > li.hohensomohausen {
+   .district_map .districts > li.hohensomonhausen {
       left: 184px;
       top: 64px;
+      z-index: 2;
    }
    
    .district_map .districts > li span {

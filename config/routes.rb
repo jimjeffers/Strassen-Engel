@@ -12,6 +12,7 @@ Site::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   match 'please_login/' => 'city#login', :as => :login
+  match 'in/district/:slug' => 'city#district', :as => :local
   
   # This route can be invoked with purchase_url(:id => product.id)
 

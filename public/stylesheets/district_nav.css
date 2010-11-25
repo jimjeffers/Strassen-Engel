@@ -42,6 +42,10 @@
       text-decoration: none;
    }
    
+   .district_nav li.active a {
+      font-weight: bold;
+   }
+   
    .district_nav li a:hover {
       background: rgba(0,0,0,0.1);
    }

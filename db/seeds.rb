@@ -7,10 +7,11 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 
-["Charlottenburg","Friedrichshain","Hellersdorf","Lichtenberg","Kopenick","Kreuzberg","Marzahn","Mitte","Neukolln",
+["Charlottenburg","Friedrichshain","Hellersdorf","Hohensomonhausen","Lichtenberg","Kopenick","Kreuzberg","Marzahn","Mitte","Neukolln",
 "Pankow","Prenzlauer Berg","Reinickendorf","Schoneberg","Spandau","Steglitz","Tempelhof","Tiergarten",
-"Treptow","Wedding","Wilmersdorf","Zehlendorf"].each do |name|
-  District.create(:name => name, :city => "Berlin") if District.find_by_name(name).nil?
+"Treptow","Wedding","Weissensee","Wilmersdorf","Zehlendorf"].each do |name|
+  District.find_by_name(name).destroy if !District.find_by_name(name).nil?
+  District.create(:name => name, :city => "Berlin", :slug => name.gsub(' ','_').downcase) if District.find_by_name(name).nil?
   puts "Generating district: #{name}"
 end
 

@@ -25,6 +25,8 @@ $(function() {
   $('#cropbox').Jcrop({
       onSelect: showPreview,
       onChange: showPreview,
+      setSelect: [0,0,<%= Article::AVATAR_SW %>, <%= Article::AVATAR_SH %>],
+      maxSize: [0,0],
       minSize: [<%= Article::AVATAR_SW %>, <%= Article::AVATAR_SH %>],
       aspectRatio: <%= Article::AVATAR_SW %>/<%= Article::AVATAR_SH %>
     });
@@ -33,15 +35,10 @@ $(function() {
 </script>
 <% end %>
 
+<h3>Please Crop Your Photo</h3>
 <p>
-  <b>Name:</b>
-  <%=h @article.name %>
-</p>
-
-<p>
-  <b>Avatar:</b>
   <%= image_tag @article.avatar.url(:normal), :id => 'cropbox' %>
-<div style="width:<%= Article::AVATAR_SW %>px;height:<%= Article::AVATAR_SH %>px;overflow:hidden">
+<div style="width:<%= Article::AVATAR_SW %>px;height:<%= Article::AVATAR_SH %>px;overflow:hidden;display:none">
   <%= image_tag @article.avatar.url(:normal), :id => 'preview' %>
 </div>
 </p>
@@ -53,6 +50,3 @@ $(function() {
   <%= f.hidden_field :crop_h, :id => 'crop_h' %>
   <%= f.submit "Crop!" %>
 <% end %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>

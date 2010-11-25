@@ -2,7 +2,7 @@
       <nav class="district_nav">
         <ol>
           <% for district in @districts %>
-          <li><a href="#"><%= district.name %> <% if district.articles_count > 0 %><span class="count"><%= district.articles_count %></span><% end %></a></li>
+          <li class="<%= "active" if !@district.nil? and @district == district %>"><a href="<%= local_path(district.slug) %>"><%= district.name %> <% if district.articles_count > 0 %><span class="count"><%= district.articles_count %></span><% end %></a></li>
           <% end %>
         </ol>
       </nav>

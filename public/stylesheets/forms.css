@@ -103,3 +103,7 @@
       right: -230px;
       z-index: 2;
    }
+   
+   #preview {
+      display: none;
+   }

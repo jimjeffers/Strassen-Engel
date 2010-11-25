@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     
     if @article.save
-      flash[:notice] = 'Article was successfully created.'
+      flash[:notice] = '<h2>Awesome! You\'re Almost Done!</h2><p>Your article is getting published we just need you to confirm the photo.</p>'
       if params[:article][:avatar].blank?
         redirect_to(@article)
       else
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
   def update
     @article = current_user.articles.find(params[:id])
     if @article.update_attributes(params[:article])
-      flash[:notice] = 'Article was successfully updated.'
+      flash[:notice] = '<h2>Success!</h2><p>Article was successfully updated.</p>'
       if params[:article][:avatar].blank?
         redirect_to(@article)
       else
