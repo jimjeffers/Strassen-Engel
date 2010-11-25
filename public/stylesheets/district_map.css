@@ -1,0 +1,145 @@
+/*  KEEP OUR CSS CLEAN
+    Some guidelines to follow:
+    1. Break code down into sections.
+    2. Keep your rules alphabetically sorted.
+    3. Only put one selector per line for a block of rules that apply to multiple selectors.
+    4. Indent your rules, only one rule per line.
+    5. Indent proprietary properties with two spaces. Keep these properties directly below the proposed property.
+        
+        example:
+        
+        element#id,
+        element.class {
+            rule1: value;
+              -webkit-rule2: value;
+              -moz-rule2: value;
+            rule2: value;
+            top: value;
+        }
+/* =district_map
+   ------------------------------------------------------ */
+   .district_map {
+      position: relative;
+   }
+   
+   .district_map ul {
+      list-style: none;
+   }
+   
+   .district_map .districts > li {
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.5s ease-out;
+        -webkit-transition: opacity 0.5s ease-out;
+        -o-transition: opacity 0.5s ease-out;
+        -moz-transition: opacity 0.5s ease-out;
+   }
+   
+   .district_map .districts > li:hover {
+      opacity: 1;
+   }
+   
+   .district_map .districts > li.active {
+      opacity: 0.5;
+   } 
+   
+   .district_map .districts > li.tempelhof {
+      left: 126px;
+      top: 152px;
+   }
+   
+   .district_map .districts > li.neukoln {
+      left: 150px;
+      top: 151px;
+   }
+   
+   .district_map .districts > li.pankow {
+      left: 129px;
+      top: 27px;
+   }
+   
+   .district_map .districts > li.reinickendorf {
+      left: 56px;
+      top: 16px;
+   }
+   
+   .district_map .districts > li.spandau {
+      left: 11px;
+      top: 64px;
+   }
+   
+   .district_map .districts > li.tempelhof {
+      left: 126px;
+      top: 152px;
+   }
+   
+   .district_map .districts > li.weissensee {
+      left: 166px;
+      top: 10px;
+   }
+   
+   .district_map .districts > li.treptow {
+      left: 172px;
+      top: 140px;
+   }
+   
+   .district_map .districts > li.zehelendorf {
+      left: 0;
+      top: 166px;
+   }
+   
+   .district_map .districts > li.prenzelauerberg {
+      left: 147px;
+      top: 89px;
+   }
+   
+   .district_map .districts > li.mitte {
+      left: 104px;
+      top: 88px;
+   }
+   
+   .district_map .districts > li.lichtenberg {
+      left: 182px;
+      top: 117px;
+   }
+   
+   .district_map .districts > li.kopenik {
+      left: 195px;
+      top: 155px;
+   }
+   
+   .district_map .districts > li.hellersdorg {
+      left: 210px;
+      top: 87px;
+   }
+   
+   .district_map .districts > li.hohensomohausen {
+      left: 184px;
+      top: 64px;
+   }
+   
+   .district_map .districts > li span {
+      background: rgba(0,0,0,0.75);
+      border-radius:5px;
+        -o-border-radius:5px;
+        -icab-border-radius:5px;
+        -khtml-border-radius:5px;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+      color: #fff;
+      display: none;
+      font-size: 0.75em;
+      font-weight: normal;
+      line-height: 1.25em;
+      padding: 2px 4px;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+   }
+   
+   .district_map .districts > li:hover span {
+      display: block;
+   }

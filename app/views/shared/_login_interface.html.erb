@@ -1,0 +1,9 @@
+<nav id="login" class="login">
+<% if current_user %>
+  Welcome <strong><%= current_user.name %></strong>!
+  <%= link_to "Sign Out", signout_path, :class => 'logout' %>
+<% else %>
+  <%= link_to image_tag("sign-in-with-twitter-l.png"), "/auth/twitter", :class => "twitter" %>
+  <%= link_to image_tag("facebook-login-button.png"), "/auth/facebook" %>
+<% end %>
+</nav>

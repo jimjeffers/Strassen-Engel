@@ -1,0 +1,88 @@
+/*  KEEP OUR CSS CLEAN
+    Some guidelines to follow:
+    1. Break code down into sections.
+    2. Keep your rules alphabetically sorted.
+    3. Only put one selector per line for a block of rules that apply to multiple selectors.
+    4. Indent your rules, only one rule per line.
+    5. Indent proprietary properties with two spaces. Keep these properties directly below the proposed property.
+        
+        example:
+        
+        element#id,
+        element.class {
+            rule1: value;
+              -webkit-rule2: value;
+              -moz-rule2: value;
+            rule2: value;
+            top: value;
+        }
+*/
+/* =primary_content
+   ------------------------------------------------------ */
+   .primary_content {
+      background: url('../images/bg_primary_content.png') repeat-y;
+      padding: 20px 15px;
+      position: relative;
+      width: 558px;
+   }
+   
+   .primary_content > .open_content,
+   .primary_content > .close_content {
+      background: url('../images/bg_primary_content_open.png') no-repeat;
+      display: block;
+      height: 21px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 588px;
+   }
+   
+   .primary_content > .close_content {
+      background: url('../images/bg_primary_content_close.png') no-repeat;
+      bottom: 0;
+      top: auto;
+   }
+   
+   
+   .primary_content > hgroup {
+      background: url(../images/divider_primary_content.png) no-repeat left bottom;
+      display: block;
+      min-height: 67px;
+      padding-bottom: 10px;
+      position: relative;
+      margin-bottom: 10px;
+   }
+   
+   .primary_content > hgroup h1 {
+      left: 0;
+      position: absolute;
+      top: 0;
+   }
+   
+   .primary_content .new_story {
+      position: absolute;
+      right: 0;
+      top: 0;
+   }
+   
+   .primary_content .new_story a {
+      display: block;
+      position: relative;
+      height: 63px;
+      width: 178px;
+   }
+   
+   .primary_content .new_story a span {
+      background: url(../images/button_story.png) no-repeat;
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+   }
+   
+   .primary_content .new_story a:active span {
+      background-position: 0 -63px;
+   }

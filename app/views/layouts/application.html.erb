@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Site</title>
+  <link rel="stylesheet" href="/css/master.build.min.css" type="text/css" media="screen" charset="utf-8">
+  <%= csrf_meta_tag %>
+  <%= yield :headers %>
+</head>
+<body>
+  <%= render :partial => 'shared/login_interface' %>
+  <div id="primary_content" class="primary_content">
+    <hgroup>
+      <h1><img src="/images/icon_logo.png" width="341" height="67" alt="Strassen Engel"></h1>
+      <h2 class="new_story"><a href="#" title="Add a Story: Participate!">New Story<span></span></a></h2>
+    </hgroup>
+    <%= render 'shared/flash_banner' if flash[:notice] %>
+    <%= yield %>
+    <span class="open_content"></span>
+    <span class="close_content"></span>
+  </div>
+  <div id="secondary_content" class="secondary_content">
+    <section id="city_selector" class="city_selector">
+        <hgroup>
+          <h2>Stadt</h2>
+          <h3><img src="/images/name_berlin.png" width="127" height="31" alt="Name Berlin"></h3>
+        </hgroup>
+    </section>
+    <%= render :partial => 'shared/district_map' %>
+    <%= render :partial => 'shared/district_nav' %>
+
+  </div>
+  <%= javascript_include_tag 'app.min.js' %>
+  <%= yield :extra %>
+</body>
+</html>
