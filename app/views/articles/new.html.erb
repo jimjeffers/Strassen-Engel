@@ -2,17 +2,20 @@
 
 <% form_for(@article, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
-
-  <p>
+  <ol class="form">
+  <li>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
+  </li>
+  <li>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </li>
+  <li>
     <%= f.file_field :avatar %>
-  </p>
-  <p>
+  </li>
+  <li>
     <%= f.submit "Create" %>
-  </p>
+  </li>
+  </ol>
 <% end %>
-
-<%= link_to 'Back', articles_path %>

@@ -10,6 +10,7 @@ gem 'omniauth'
 gem 'rmagick'
 gem 'paperclip'
 gem 'dynamic_form'
+gem 'mysql2'
 
 # Use unicorn as the web server
 # gem 'unicorn'

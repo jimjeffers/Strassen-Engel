@@ -1,0 +1,40 @@
+require "bundler/capistrano"
+
+set :keep_releases,       5
+set :host                 "209.20.75.249"
+set :application,         "strassenengel.com"
+set :user,                CHANGE_ME
+set :password,            CHANGE_ME
+set :deploy_to,           "/data/apps/#{application}"
+set :runner,              CHANGE_ME
+set :repository,          "git@github.com:jimjeffers/Strassen-Engel.git"
+set :scm,                 "git"
+set :branch,              "master"
+set :deploy_via,          :remote_cache
+set :port,                CHANGE_ME
+
+role :app, application
+role :web, application
+role :db, application , :primary => true
+
+desc "Link shared files"
+task :before_symlink do
+run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+run "rm -rf #{release_path}/log/"
+run "ln -nfs #{shared_path}/log #{release_path}/log"
+run "rm -rf #{release_path}/tmp/"
+run "ln -nfs #{shared_path}/tmp #{release_path}/tmp"
+run "rm -rf #{release_path}/public/system/"
+run "ln -nfs #{shared_path}/public/system #{release_path}/public/system"
+end
+
+
+[:start, :restart, :stop].each do |action|
+  desc "Restarts passenger."
+  deploy.task action do
+    sudo "touch #{shared_path}/tmp/restart.txt"
+  end
+end
+
+after "deploy", "deploy:cleanup"
+after "deploy:migrations" , "deploy:cleanup"

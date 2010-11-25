@@ -2,6 +2,8 @@ class Article < ActiveRecord::Migration
   def self.up
     create_table :articles do |t|
       t.string :name
+      t.string :title
+      t.references :user
       t.text :content
       t.references :district
       t.string :avatar_file_name

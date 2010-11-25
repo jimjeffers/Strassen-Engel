@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(:version => 20101125142215) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
+    t.string   "title"
+    t.integer  "user_id"
     t.text     "content"
     t.integer  "district_id"
     t.string   "avatar_file_name"
