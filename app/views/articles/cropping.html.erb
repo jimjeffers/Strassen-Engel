@@ -25,7 +25,7 @@ $(function() {
   $('#cropbox').Jcrop({
       onSelect: showPreview,
       onChange: showPreview,
-      setSelect:   [ 0, 0, 240, 240 ],
+      minSize: [<%= Article::AVATAR_SW %>, <%= Article::AVATAR_SH %>],
       aspectRatio: <%= Article::AVATAR_SW %>/<%= Article::AVATAR_SH %>
     });
 });

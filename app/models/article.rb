@@ -1,9 +1,9 @@
 class Article < ActiveRecord::Base
   require RAILS_ROOT+'/lib/paperclip_processors/jcropper.rb'
-  AVATAR_SW = (295/2.5).to_i
-  AVATAR_SH = (220/2.5).to_i
-  AVATAR_NW = 295
-  AVATAR_NH = 220
+  AVATAR_SW = 295
+  AVATAR_SH = 220
+  AVATAR_NW = 295*2
+  AVATAR_NH = 220*2
   
   has_attached_file :avatar,
         :styles => { :normal => ["#{AVATAR_NW}x#{AVATAR_NH}>", :jpg],
