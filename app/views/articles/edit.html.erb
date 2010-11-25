@@ -2,19 +2,7 @@
 
 <% form_for(@article, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= image_tag @article.avatar.url(:normal) %>
-    <%= f.label :avatar_file_name %><br />
-    <%= f.file_field :avatar %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+  <%= render :partial => 'article_form', :locals => {:f => f, :submit => "Update this story.", :display_image => true } %>
 <% end %>
 
 <%= link_to 'Show', @article %> |

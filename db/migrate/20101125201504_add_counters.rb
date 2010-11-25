@@ -1,7 +1,7 @@
 class AddCounters < ActiveRecord::Migration
   def self.up
-    add_column :districts, :articles_count, :integer
-    add_column :users, :articles_count, :integer
+    add_column :districts, :articles_count, :integer, :default => 0
+    add_column :users, :articles_count, :integer, :default => 0
   end
 
   def self.down

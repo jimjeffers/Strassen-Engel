@@ -1,26 +1,3 @@
-<h1>New article</h1>
-
 <% form_for(@article, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
-  <ol class="form">
-  <li>
-    <%= f.label :title, "Give the encounter/story a title:" %>
-    <%= f.text_field :title %>
-  </li>
-  <li>
-    <%= f.label :content, "Please tell us the story..." %>
-    <%= f.text_area :content %>
-  </li>
-  <li>
-    <%= f.label :avatar, "Attach a photo for the story.." %>
-    <%= f.file_field :avatar %>
-  </li>
-  <li>
-    <%= f.label :name, "Could you share the name of the person you met? (optional)" %>
-    <%= f.text_field :name %>
-  </li>
-  <li>
-    <%= f.submit "Submit the Story" %>
-  </li>
-  </ol>
+  <%= render :partial => 'article_form', :locals => {:f => f, :submit => "Update this story.", :display_image => false } %>
 <% end %>

@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def check_for_current_user
     redirect_to login_path if current_user.nil?
   end
+  
+  def get_districts
+    @districts = District.sorted
+  end
 end

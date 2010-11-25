@@ -10,7 +10,7 @@
   <%= render :partial => 'shared/login_interface' %>
   <div id="primary_content" class="primary_content">
     <hgroup>
-      <h1><img src="/images/icon_logo.png" width="341" height="67" alt="Strassen Engel"></h1>
+      <h1><a href="/"><img src="/images/icon_logo.png" width="341" height="67" alt="Strassen Engel"></a></h1>
       <h2 class="new_story"><a href="/articles/new" title="Add a Story: Participate!">New Story<span></span></a></h2>
     </hgroup>
     <%= render 'shared/flash_banner' if flash[:notice] %>
@@ -22,7 +22,7 @@
     <section id="city_selector" class="city_selector">
         <hgroup>
           <h2>Stadt</h2>
-          <h3><img src="/images/name_berlin.png" width="127" height="31" alt="Name Berlin"></h3>
+          <h3><a href="/"><img src="/images/name_berlin.png" width="127" height="31" alt="Name Berlin"></a></h3>
         </hgroup>
     </section>
     <%= render :partial => 'shared/district_map' %>

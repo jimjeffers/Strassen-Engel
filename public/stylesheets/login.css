@@ -32,16 +32,16 @@
       display: block;
    }
    
-   .login a {
-      display: block;
-      float: left;
-   }
-   
    .twitter {
       padding-right: 8px;
    }
    
    .login a.logout {
       float: right;
+      display: block;
       font-weight: bold;
+   }
+   
+   .login ul li {
+      float: left;
    }

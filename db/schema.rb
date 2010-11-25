@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20101125201504) do
     t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "articles_count"
+    t.integer  "articles_count", :default => 0
   end
 
   create_table "users", :force => true do |t|
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20101125201504) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "articles_count"
+    t.integer  "articles_count", :default => 0
   end
 
 end

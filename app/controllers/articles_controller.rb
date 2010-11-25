@@ -1,30 +1,40 @@
 class ArticlesController < ApplicationController
   before_filter :check_for_current_user
+  before_filter :get_districts
   
   # GET /articles
   def index
-    @articles = Article.find(:all)
+    flash[:notice] = "<h2>Share A Story With Us</h2><p>Share with us an experience you have had with a 
+    homeless person that interested you. Tell us about a good deed. Tell us about something you saw.. 
+    or just tell us their story. Share their voice with us.</p><p>Also, you may <a href=\"#{articles_path}\">view past stories you have written.</a></p>"
+    @articles = current_user.articles
   end
 
   # GET /articles/1
   def show
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
   end
 
   # GET /articles/new
   def new
+    flash[:notice] = "<h2>Share A Story With Us</h2><p>Share with us an experience you have had with a 
+    homeless person that interested you. Tell us about a good deed. Tell us about something you saw.. 
+    or just tell us their story. Share their voice with us.</p><p>Also, you may <a href=\"#{articles_path}\">view past stories you have written.</a></p>"
     @article = Article.new
   end
 
   # GET /articles/1/edit
   def edit
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
+    flash[:notice] = "<h2>Editing &quot;#{@article.name}&quot;</h2><p>You are currently editing a story you have
+    submitted to strassen engel. If you don't wish to make changes you may <a href=\"#{articles_path}\">view other stories you have written.</a></p>"
   end
 
   # POST /articles
   def create
     @article = Article.new(params[:article])
-
+    @article.user = current_user
+    
     if @article.save
       flash[:notice] = 'Article was successfully created.'
       if params[:article][:avatar].blank?
@@ -39,7 +49,7 @@ class ArticlesController < ApplicationController
 
   # PUT /articles/1
   def update
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
     if @article.update_attributes(params[:article])
       flash[:notice] = 'Article was successfully updated.'
       if params[:article][:avatar].blank?
@@ -55,7 +65,7 @@ class ArticlesController < ApplicationController
   
   # DELETE /articles/1
   def destroy
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
     @article.destroy
 
     redirect_to(articles_url)

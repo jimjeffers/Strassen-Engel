@@ -1,22 +1,9 @@
-<h1>Listing articles</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Avatar file name</th>
-  </tr>
-
+<ul class="articles_list">
 <% for article in @articles %>
-  <tr>
-    <td><%=h article.name %></td>
-    <td><%= image_tag article.avatar.url(:small) %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li class="article" id="article_<%= article.id %>">
+    <%= link_to article.name, article, :class => "name" %>
+    <%= image_tag article.avatar.url(:small), :class => "thumbnail" %>
+    <%= link_to 'Edit', edit_article_path(article) %></td>
+  </li>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New article', new_article_path %>
+</ul>

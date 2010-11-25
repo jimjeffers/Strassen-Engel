@@ -1,4 +1,9 @@
-<%= render :partial => 'article' %>
-<%= render :partial => 'article' %>
-<a href="#"><img src="/images/button_read_more.png" width="548" height="63" alt="Read More"></a>
-<a href="#"><img src="/images/button_share.png" width="548" height="63" alt="Share a Story"></a>
+<% if !@articles.blank? %>
+  <% for article in @articles %>
+    <%= render :partial => 'article', :locals => {:article => article} %>
+  <% end %>
+<% else %>
+  <p>There are no stories being shared! This website must be like brand new or something!</p>
+<% end %>
+<a href="<%= new_article_path %>"><img src="/images/button_read_more.png" width="548" height="63" alt="Read More"></a>
+<a href="<%= new_article_path %>"><img src="/images/button_share.png" width="548" height="63" alt="Share a Story"></a>

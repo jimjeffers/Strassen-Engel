@@ -28,10 +28,13 @@
       background: url(../images/divider_primary_content.png) no-repeat top center;
       margin: 6px 0;
       padding: 6px 0;
+      position: relative;
    }
    
    form input[type="text"],
-   textarea {
+   form textarea,
+   form select,
+   form input[type="submit"] {
       border: 2px solid #ccc;
       border-radius:10px;
         -o-border-radius:10px;
@@ -51,6 +54,15 @@
       border-color: #c66;
    }
    
+   form input[type="submit"] {
+      background: #00a196;
+      border-color: rgba(255,255,255,0.5);
+      font-weight: bold;
+      color: #000;
+      text-shadow: -1px -1px 1px rgba(255,255,255,0.25);
+      padding: 8px;
+   }
+   
    textarea {
       height: 400px;
       width: 540px;
@@ -63,4 +75,31 @@
       font-weight: bold;
       line-height: 1.5em;
       padding: 2px 6px;
+   }
+   
+   .errorExplanation {
+      color: #900;
+      margin-left: 10px;
+   }
+   
+   .errorExplanation ul {
+      color: #900;
+      margin: 10px 30px;
+   }
+   
+   form .thumbnail {
+      border: 5px solid #000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.75);
+        -o-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+        -icab-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+        -khtml-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+      transform: scale(0.5);
+        -moz-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+      position: absolute;
+      top: -60px;
+      right: -230px;
+      z-index: 2;
    }

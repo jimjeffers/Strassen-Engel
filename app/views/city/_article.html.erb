@@ -1,15 +1,15 @@
 <article id="article_1" class="article">
   <header>
     <hgroup>
-      <h2>His Entire World...Homeless Man and his Best Friend, Brandy the Dog</h2>
-      <h3>Nov 26</h3>
+      <h2><%= h article.title %></h2>
+      <h3><%= article.created_at.strftime("j d") %></h3>
     </hgroup>
   </header>
   <section class="story">
-    <p>I found this homeless man with his dog, he was ever so gentle and loving with man's best friend. Chris told me his dog, Brandy, was all he had in the world. His last dog was taken away from him by the police because he did not have tags or a licence for the dog. The dog was euthanized. Killed by law enforcement! This is how they protect and serve. How can anyone be so heartless to take the only thing that a homeless person has? For that matter, whether homeless or not, our pets are sometimes the only love any of us really have. <a href="#">read more ></a></p>
+    <p><a href="#">read more ></a></p>
     <dl class="portrait">
-      <dt>Chris &amp; Brandy</dt>
-      <dd><img src="/images/portraits/chris.jpg" width="294" height="219" alt="Chris"></dd>
+      <dt><%= article.name %></dt>
+      <dd><img src="<%= article.avatar.url(:small) %>" width="294" height="219" alt="Chris"></dd>
     </dl>
   </section>
 </article>

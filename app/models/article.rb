@@ -1,8 +1,8 @@
 class Article < ActiveRecord::Base
   require RAILS_ROOT+'/lib/paperclip_processors/jcropper.rb'
   
-  belongs_to :district
-  belongs_to :article
+  belongs_to :district, :counter_cache => true
+  belongs_to :user, :counter_cache => true
   
   AVATAR_SW = 295
   AVATAR_SH = 220

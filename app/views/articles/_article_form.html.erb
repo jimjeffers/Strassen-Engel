@@ -1,0 +1,30 @@
+<%= f.error_messages %>
+<ol class="form">
+<li>
+  <%= f.label :title, "Give the encounter/story a title:" %>
+  <%= f.text_field :title %>
+</li>
+<li>
+  <%= f.label :content, "Please tell us the story..." %>
+  <%= f.text_area :content %>
+</li>
+<li>
+  <%= f.label :avatar, "Attach a photo for the story.." %>
+  <%= f.file_field :avatar %>
+  <% if display_image %>
+  <%= image_tag @article.avatar.url(:small), :class => "thumbnail" %>
+  <% end %>
+</li>
+<li>
+  <%= f.label :name, "Could you share the name of the person you met? (optional)" %>
+  <%= f.text_field :name %>
+</li>
+<li>
+  <%= f.label :district_id, "Where did this all happen?" %>
+  <%= f.select :district_id, @districts.map { |d| [d.name, d.id]  } %>
+</li>
+
+<li>
+  <%= f.submit submit %>
+</li>
+</ol>

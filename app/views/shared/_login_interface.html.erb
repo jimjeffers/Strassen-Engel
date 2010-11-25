@@ -1,9 +1,11 @@
 <nav id="login" class="login">
 <% if current_user %>
-  Welcome <strong><%= current_user.name %></strong>!
+  Welcome <strong><a href="<%= articles_path %>"><%= current_user.name %></a></strong>!
   <%= link_to "Sign Out", signout_path, :class => 'logout' %>
 <% else %>
-  <%= link_to image_tag("sign-in-with-twitter-l.png"), "/auth/twitter", :class => "twitter" %>
-  <%= link_to image_tag("facebook-login-button.png"), "/auth/facebook" %>
+  <ul>
+    <li class="twitter"><%= link_to image_tag("sign-in-with-twitter-l.png"), "/auth/twitter" %></li>
+    <li class="facebook"><%= link_to image_tag("facebook-login-button.png"), "/auth/facebook" %></li>
+  </ul>
 <% end %>
 </nav>
