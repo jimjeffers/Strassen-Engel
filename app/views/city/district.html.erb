@@ -3,7 +3,7 @@
     <%= render :partial => 'article', :locals => {:article => article} %>
   <% end %>
 <% else %>
-  <p>There are no stories being shared! This website must be like brand new or something!</p>
+  <h2 class="standalone">There are no stories being shared for <%= @district.name %>! This website must be like brand new or something!</h2>
 <% end %>
-<a href="<%= new_article_path %>"><img src="/images/button_read_more.png" width="548" height="63" alt="Read More"></a>
+<!-- <a href="<%= new_article_path %>"><img src="/images/button_read_more.png" width="548" height="63" alt="Read More"></a> -->
 <a href="<%= new_article_path %>"><img src="/images/button_share.png" width="548" height="63" alt="Share a Story"></a>

@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :check_for_current_user
   before_filter :get_districts
+  before_filter :set_title
   
   # GET /articles
   def index
@@ -38,7 +39,7 @@ class ArticlesController < ApplicationController
     if @article.save
       flash[:notice] = '<h2>Awesome! You\'re Almost Done!</h2><p>Your article is getting published we just need you to confirm the photo.</p>'
       if params[:article][:avatar].blank?
-        redirect_to(@article)
+        redirect_to(articles_url)
       else
         render :action => 'cropping'
       end
@@ -53,7 +54,7 @@ class ArticlesController < ApplicationController
     if @article.update_attributes(params[:article])
       flash[:notice] = '<h2>Success!</h2><p>Article was successfully updated.</p>'
       if params[:article][:avatar].blank?
-        redirect_to(@article)
+        redirect_to(articles_url)
       else
         render :action => 'cropping'
       end
@@ -69,6 +70,12 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to(articles_url)
+  end
+  
+  protected
+  
+  def set_title
+    @title = "Share A Story"
   end
   
 end

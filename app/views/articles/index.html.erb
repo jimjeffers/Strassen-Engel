@@ -1,9 +1,8 @@
 <ul class="articles_list">
 <% for article in @articles %>
   <li class="article" id="article_<%= article.id %>">
-    <%= link_to article.name, article, :class => "name" %>
-    <%= image_tag article.avatar.url(:small), :class => "thumbnail" %>
-    <%= link_to 'Edit', edit_article_path(article) %></td>
+    <%= link_to article.name, edit_article_path(article), :class => "name" %>
+    <%= image_tag article.avatar.url(:small) %>
   </li>
 <% end %>
 </ul>

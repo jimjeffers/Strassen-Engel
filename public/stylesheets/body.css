@@ -34,3 +34,10 @@
    a:visited {
       color: #00a196;
    }
+   
+   h2.standalone {
+      font-size: 1.75em;
+      line-height: 1.35em;
+      margin: 1.5em 0;
+      text-align: center;
+   }

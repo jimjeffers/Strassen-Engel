@@ -1,8 +1,8 @@
-<article id="article_1" class="article">
+<article id="article_<%= article.id %>" class="article">
   <header>
     <hgroup>
       <h2><%= h article.title %></h2>
-      <h3><%= article.created_at.strftime("j d") %></h3>
+      <h3><%= article.created_at.strftime("%b %d") %></h3>
     </hgroup>
   </header>
   <section class="story">

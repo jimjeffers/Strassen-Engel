@@ -13,6 +13,7 @@ class CityController < ApplicationController
   
   def district
     @district = District.find_by_slug(params[:slug])
+    @title = @district.name
     @articles = @district.articles.recent
     flash.now[:notice] = "<h2>Viewing Stories From #{@district.name}</h2>
     <p>This site is dedicated to revealing the interesting and positive aspects of the people we walk past  on the street every day. The homeless. Have you had an interesting encounter with a homeless person in your area? Have you done a good gesture  that had an impact on their lives? Did it impact your life? <a href=\"#\">Share your story with the rest of the world here.</a></p>"
