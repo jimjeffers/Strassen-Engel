@@ -11,6 +11,7 @@ gem 'rmagick', "2.12.2"
 gem 'paperclip'
 gem 'dynamic_form'
 gem 'mysql2'
+gem 'RedCloth'
 
 # Use unicorn as the web server
 # gem 'unicorn'

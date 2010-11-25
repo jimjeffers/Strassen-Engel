@@ -60,6 +60,10 @@
    /* Article
       Describes the article. */
       @import "article.css";
+   
+   /* Forms
+      Descirbes the layout and appearance of web forms used. */
+      @import "forms.css";
       
 /* =INACTIVE
    ------------------------------------------------------ */

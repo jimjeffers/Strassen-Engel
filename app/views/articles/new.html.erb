@@ -4,18 +4,23 @@
   <%= f.error_messages %>
   <ol class="form">
   <li>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :title, "Give the encounter/story a title:" %>
+    <%= f.text_field :title %>
   </li>
   <li>
-    <%= f.label :content %><br />
+    <%= f.label :content, "Please tell us the story..." %>
     <%= f.text_area :content %>
   </li>
   <li>
+    <%= f.label :avatar, "Attach a photo for the story.." %>
     <%= f.file_field :avatar %>
   </li>
   <li>
-    <%= f.submit "Create" %>
+    <%= f.label :name, "Could you share the name of the person you met? (optional)" %>
+    <%= f.text_field :name %>
+  </li>
+  <li>
+    <%= f.submit "Submit the Story" %>
   </li>
   </ol>
 <% end %>
