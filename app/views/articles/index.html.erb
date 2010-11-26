@@ -1,7 +1,11 @@
 <ul class="articles_list">
 <% for article in @articles %>
   <li class="article" id="article_<%= article.id %>">
+    <% if article.name == "" %>
+    <%= link_to "Anonymous", edit_article_path(article), :class => "name" %>
+    <% else %>
     <%= link_to article.name, edit_article_path(article), :class => "name" %>
+    <% end %>
     <%= image_tag article.avatar.url(:small) %>
   </li>
 <% end %>
