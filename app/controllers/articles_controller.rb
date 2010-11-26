@@ -72,6 +72,14 @@ class ArticlesController < ApplicationController
     redirect_to(articles_url)
   end
   
+  # DELETE /articles/1
+  def custom_delete
+    @article = current_user.articles.find(params[:id])
+    @article.destroy
+
+    redirect_to(articles_url)
+  end
+  
   protected
   
   def set_title

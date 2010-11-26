@@ -6,6 +6,7 @@
     <% else %>
     <%= link_to article.name, edit_article_path(article), :class => "name" %>
     <% end %>
+    <%= link_to "X", custom_delete_path(article.id) %>
     <%= image_tag article.avatar.url(:small) %>
   </li>
 <% end %>

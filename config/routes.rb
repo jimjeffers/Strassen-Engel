@@ -13,6 +13,7 @@ Site::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   match 'please_login/' => 'city#login', :as => :login
   match 'in/district/:slug' => 'city#district', :as => :local
+  match 'delete/:id' => 'articles#custom_delete', :as => :custom_delete
   
   # This route can be invoked with purchase_url(:id => product.id)
 
